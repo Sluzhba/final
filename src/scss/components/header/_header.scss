@@ -1,0 +1,27 @@
+@use "../../abstracts" as *;
+
+.header {
+    background-image: url("../images/img-header.png");
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include lg-md {
+        height: 766px;
+    }
+    @include md-sm {
+        height: 560px;
+    }
+    @include sm {
+        height: 992px;
+    }
+}
+
+
+.wrapper {
+    overflow-y: scroll;
+}

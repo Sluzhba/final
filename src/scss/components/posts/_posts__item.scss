@@ -1,0 +1,82 @@
+@use "../../abstracts" as *;
+@use "sass:color";
+
+.posts__item {
+  transition: background-color 0.3s;
+
+  background-color: $color-gray-light2;
+  min-height: 550px;
+
+  &:hover {
+    color: $color-primary;
+    background-color: color.adjust($color-gray-light2, $lightness: -5%);
+
+    img {
+      scale: 1.1;
+    }
+  }
+
+  &-link {
+    transition: color 0.3s;
+
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &-content {
+    padding: $gap-lg $gap;
+
+    text-align: center;
+
+    line-height: 1.25;
+  }
+
+  &-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: $gap;
+    color: $color-gray-dark;
+    text-decoration: none;
+    margin-bottom: 15px;
+    font-family: $font-header;
+
+    @include lg-md {
+      font-size: 1.25rem;
+    }
+  }
+
+  &-description {
+    font-size:1rem;
+    color: $color-gray;
+    margin-bottom: $gap;
+    font-family: $font-main;
+    font-weight: 400;
+
+    @include lg-md {
+      font-size: 1rem;
+    }
+  }
+
+  &-picture {
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    height: 300px;
+    width: 100%;
+  }
+
+  &-img {
+    display: block;
+    width: 100%;
+    transition: scale 0.3s;
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+  @for $i from 1 through 6 {
+    &:nth-of-type(#{$i}) {
+      grid-area: a#{$i};
+    }
+  }
+}

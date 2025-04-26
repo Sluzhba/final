@@ -1,0 +1,110 @@
+@use "../../abstracts" as *;
+
+
+.about {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: $color-gray-light;
+
+    @include sm {
+        flex-direction: column;
+
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: self-start;
+
+        flex: 2 1 55%;
+        margin-left: 310px;
+        margin-right: 50px;
+
+        @include lg-md {
+            margin-left: 20px;
+            margin-right: 25px;
+        }
+
+        @include md-sm {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        @include sm {
+            margin: 0 20px;
+            align-items: center;
+        }
+    }
+
+    &__title {
+        font-size: 2.5rem;
+        line-height: 1.1;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        font-family: $font-header;
+        margin-bottom: 50px;
+        margin-top: 100px;
+        color: $color-primary;
+
+        @include lg-md {
+            font-size: 2rem;
+            margin-top: 80px;
+        }
+
+        @include md-sm {
+            font-size: 1.5rem;
+            margin-top: 60px;
+        }
+
+        @include sm {
+            font-size: 1.5rem;
+            margin-top: 60px;
+            line-height: 1.3em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+    }
+
+    &__text {
+        font-size: 1.125rem;
+        line-height: 1.5;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        font-family: $font-main;
+        margin-bottom: 50px;
+        color: $color-gray;
+
+        @include lg-md {
+            font-size: 1rem;
+        }
+        @include md-sm {
+            font-size: 1rem;
+        }
+        @include sm {
+            font-size: 1rem;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__line {
+        background-color: $color-primary;
+        height: 200px;
+
+        @include sm {
+            @include visually-hidden();
+        }
+    }
+
+    &__img {
+        flex: 1 1 33.333%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: 40px;
+    }
+}

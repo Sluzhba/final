@@ -1,0 +1,107 @@
+@use "../../abstracts" as *;
+@use "sass:math";
+
+$rows: 3;
+$columns: 4;
+
+.skills {
+  padding: $gap-sm;
+  width: calc(100% - #{$gap-sm * 2});
+
+  @include sm {
+    padding: $gap;
+    width: calc(100% - #{$gap * 2});
+  }
+
+  &__container {
+    display: grid;
+
+    grid-template-rows: repeat($rows, 1fr);
+    grid-template-columns: repeat($columns, 1fr);
+    grid-template-areas:
+      "a1 a1 a2 a3"
+      "a4 a5 a5 a6"
+      "a7 a8 a9 a6";
+    gap: $gap-sm;
+    margin-bottom: $gap;
+
+    @include lg-md {
+      grid-template-rows: repeat(5, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas:
+            "a1 a1 a2"
+            "a3 a4 a4"
+            "a5 a5 a6"
+            "a7 a8 a6"
+            "a7 a9 a9";
+    }
+
+    @include md-sm {
+      grid-template-rows: repeat(6, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+                "a1 a2"
+                "a3 a2"
+                "a4 a4"
+                "a5 a6"
+                "a5 a7"
+                "a8 a9";
+    }
+
+    @include sm {
+      grid-template-rows: repeat(9, 1fr);
+      grid-template-columns: 1fr;
+        grid-template-areas:
+            "a1"
+            "a2"
+            "a3"
+            "a4"
+            "a5"
+            "a6"
+            "a7"
+            "a8"
+            "a9";
+    }
+  }
+
+  &__title {
+    @include visually-hidden();
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $gap-sm;
+    margin-bottom: $gap-x2;
+
+    @include sm {
+      margin-bottom: $gap;
+    } 
+  }
+
+  &__btn {
+    display: block;
+    height: 60px;
+    width: 350px;
+    background-color: rgba($color-primary, 0.8);
+    color: $color-white;
+    font-size: 1.125rem;
+    letter-spacing: 0.1em;
+    font-family: $font-main;
+    border: 2px solid $color-black;
+
+    &:hover {
+      background-color: $color-accent;
+    }
+
+    @include sm {
+      width: 100%;
+
+    }
+  }
+
+
+
+  
+}

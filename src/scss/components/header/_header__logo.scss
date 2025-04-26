@@ -1,0 +1,18 @@
+@use "../../abstracts" as *;
+
+.nav__logo {
+    display: block;
+    margin-left: 40px;
+    width: 40%;
+
+    @media (max-width: $lg) {
+        margin-left: 20px;
+        width: auto;
+    }
+
+    &-img {
+        display: block;
+        margin-inline: auto;  
+    }
+
+}
